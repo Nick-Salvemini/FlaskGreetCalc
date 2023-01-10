@@ -1,21 +1,41 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
 """Basic math operations."""
 
-def add(a, b):
-    """Add a and b."""
-    
+@app.route('/add')
+def add():
+    '''
+    Add a and b
+    '''
+    a = request.args['a']
+    b = request.args['b']
     return a + b
 
-def sub(a, b):
-    """Substract b from a."""
-
+@app.route('/sub')
+def sub():
+    '''
+    Subtract b from a
+    '''
+    a = request.args['a']
+    b = request.args['b']
     return a - b
 
-def mult(a, b):
-    """Multiply a and b."""
-
+@app.route('/mult')
+def mult():
+    '''
+    Multiply a and b
+    '''
+    a = request.args['a']
+    b = request.args['b']
     return a * b
 
-def div(a, b):
-    """Divide a by b."""
-
+@app.route('/div')
+def div():
+    '''
+    Divide a and b
+    '''
+    a = request.args['a']
+    b = request.args['b']
     return a / b
